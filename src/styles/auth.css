@@ -1,58 +1,58 @@
-
-.signup-container {
+.auth-container {
   height: 100vh;
-  background-color: #ffffff; 
+  background-color: #ffffff;
 }
 
-
-.left-section {
-  background-color: #e0e0e0; 
+.auth-image {
+  background-color: #e0e0e0;
 }
 
-.signup-form-wrapper {
+.auth-form {
   width: 100%;
   max-width: 400px;
 }
 
-
-.signup-title {
+.auth-title {
   color: #2e2e2e;
 }
 
-.toggle-buttons {
+.role-toggle {
   border-radius: 6px;
   overflow: hidden;
 }
 
-.active-role {
-  background-color: #3cb371; 
+.role-active {
+  background-color: #3cb371;
   color: #fff;
   border: 1px solid #3cb371;
   font-weight: 500;
 }
 
-.inactive-role {
+.role-inactive {
   background-color: #fff;
   color: #2e2e2e;
   border: 1px solid #ccc;
   font-weight: 500;
 }
 
-.field-label {
+
+.input-label {
   color: #2e2e2e;
   font-weight: 500;
 }
 
-.field-input {
+.input-field {
   border-radius: 6px;
   border: 1px solid #ccc;
 }
-.submit-btn {
+
+.primary-btn {
   background-color: #3cb371;
-  color: #fff; 
+  color: #fff;
   font-weight: 500;
   border: none;
 }
-.submit-btn:hover {
+
+.primary-btn:hover {
   background-color: #35a368;
 }

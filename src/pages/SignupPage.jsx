@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../styles/signup.css";
+import "../styles/auth.css";
 
 export default function SignupPage() {
   const [role, setRole] = useState("user");
@@ -17,7 +17,7 @@ export default function SignupPage() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = async (e) => {
@@ -38,88 +38,31 @@ export default function SignupPage() {
   };
 
   return (
-    <div className="signup-container container-fluid p-0">
+    <div className="auth-container container-fluid p-0">
       <div className="row g-0 h-100">
-        <div className="col-md-6 d-none d-md-block left-section" />
+        <div className="col-md-6 d-none d-md-block auth-image" />
         <div className="col-12 col-md-6 d-flex align-items-center justify-content-center">
-          <div className="signup-form-wrapper">
-            <h3 className="fw-bold mb-4 signup-title">Signup</h3>
+          <div className="auth-form">
+            <h3 className="fw-bold mb-4 auth-title">Signup</h3>
 
-            <div className="btn-group w-100 mb-4 toggle-buttons" role="group">
-              {["user", "patient"].map((type) => (
-                <button
-                  key={type}
-                  type="button"
-                  className={`btn w-50 ${role === type ? "active-role" : "inactive-role"}`}
-                  onClick={() => setRole(type)}
-                >
-                  {type.charAt(0).toUpperCase() + type.slice(1)}
-                </button>
-              ))}
+            <div className="btn-group w-100 mb-4 role-toggle" role="group">
+              <button type="button" className={`btn w-50 ${role === "user" ? "role-active" : "role-inactive"}`} onClick={() => setRole("user")}>User</button>
+              <button type="button" className={`btn w-50 ${role === "patient" ? "role-active" : "role-inactive"}`} onClick={() => setRole("patient")}>Patient</button>
             </div>
 
             <form onSubmit={handleSubmit}>
-              {["firstName", "lastName", "email", "username"].map((field) => (
-                <div className="mb-3" key={field}>
-                  <label className="form-label field-label">
-                    {field.charAt(0).toUpperCase() + field.slice(1)}
-                  </label>
-                  <input
-                    type={field === "email" ? "email" : "text"}
-                    name={field}
-                    className="form-control field-input"
-                    placeholder={field.charAt(0).toUpperCase() + field.slice(1)}
-                    value={formData[field]}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-              ))}
-
-              <div className="mb-3">
-                <label className="form-label field-label">Password</label>
-                <input
-                  type="password"
-                  name="password"
-                  className="form-control field-input"
-                  placeholder="Password"
-                  value={formData.password}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-
-              <div className="mb-3">
-                <label className="form-label field-label">Confirm Password</label>
-                <input
-                  type="password"
-                  name="confirmPassword"
-                  className="form-control field-input"
-                  placeholder="Confirm Password"
-                  value={formData.confirmPassword}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
+              <div className="mb-3"><label className="form-label input-label">First Name</label><input type="text" name="firstName" className="form-control input-field" value={formData.firstName} onChange={handleChange} required /></div>
+              <div className="mb-3"><label className="form-label input-label">Last Name</label><input type="text" name="lastName" className="form-control input-field" value={formData.lastName} onChange={handleChange} required /></div>
+              <div className="mb-3"><label className="form-label input-label">Email</label><input type="email" name="email" className="form-control input-field" value={formData.email} onChange={handleChange} required /></div>
+              <div className="mb-3"><label className="form-label input-label">Username</label><input type="text" name="username" className="form-control input-field" value={formData.username} onChange={handleChange} required /></div>
+              <div className="mb-3"><label className="form-label input-label">Password</label><input type="password" name="password" className="form-control input-field" value={formData.password} onChange={handleChange} required /></div>
+              <div className="mb-3"><label className="form-label input-label">Confirm Password</label><input type="password" name="confirmPassword" className="form-control input-field" value={formData.confirmPassword} onChange={handleChange} required /></div>
 
               {role === "patient" && (
-                <div className="mb-3">
-                  <label className="form-label field-label">Illness Type</label>
-                  <input
-                    type="text"
-                    name="illness"
-                    className="form-control field-input"
-                    placeholder="Illness Type"
-                    value={formData.illness}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
+                <div className="mb-3"><label className="form-label input-label">Illness Type</label><input type="text" name="illness" className="form-control input-field" value={formData.illness} onChange={handleChange} required /></div>
               )}
 
-              <button type="submit" className="btn submit-btn w-100 mt-2">
-                Submit
-              </button>
+              <button type="submit" className="btn primary-btn w-100 mt-2">Submit</button>
             </form>
           </div>
         </div>
@@ -127,8 +70,3 @@ export default function SignupPage() {
     </div>
   );
 }
-
-/*
-Bootstrap 5 Docs 
-https://getbootstrap.com/docs/5.3/forms/overview/
-*/
