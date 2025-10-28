@@ -37,7 +37,7 @@ export const authRequest = async (config) => {
     if (now >= tokenExp) {
         if (!refresh) throw new Error("No refresh token");
         try {
-            const refreshRes = await axios.post("http://127.0.0.1:8000/api/token/refresh/", { refresh });
+            const refreshRes = await axios.post(`${import.meta.env.VITE_API_URL}/token/refresh/`, { refresh });
             access = refreshRes.data.access;
             saveTokens(access, refresh);
         } catch (err) {

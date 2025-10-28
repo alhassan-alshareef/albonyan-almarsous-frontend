@@ -1,7 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import SignupPage from "./pages/SignupPage";
-import LoginPage from "./pages/LoginPage"; 
-
+import LoginPage from "./pages/LoginPage";
+import ProtectedRoute from "./pages/ProtectedRoute";
+import MyPosts from "./pages/patient/MyPosts";
+import PatientPosts from "./pages/supporter/PatientPosts";
 
 function App() {
   return (
@@ -9,6 +11,24 @@ function App() {
       <Routes>
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/login" element={<LoginPage />} />
+
+        <Route
+          path="/patient/posts"
+          element={
+            <ProtectedRoute>
+              <MyPosts />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/posts"
+          element={
+            <ProtectedRoute>
+              <PatientPosts />
+            </ProtectedRoute>
+          }
+        />
       </Routes>
     </Router>
   );

@@ -1,6 +1,6 @@
 import React from 'react'
 
-function PatientDonations() {
+function MyDonations() {
   return (
     <div>
       
@@ -8,4 +8,4 @@ function PatientDonations() {
   )
 }
 
-export default PatientDonations
+export default MyDonations

@@ -1,6 +1,6 @@
 import React from 'react'
 
-function UserPosts() {
+function MyPosts() {
   return (
     <div>
       
@@ -8,4 +8,4 @@ function UserPosts() {
   )
 }
 
-export default UserPosts
+export default MyPosts
