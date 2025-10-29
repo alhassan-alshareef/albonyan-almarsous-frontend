@@ -1,6 +1,9 @@
 import axios from "axios";
 import { jwtDecode } from "jwt-decode";
 
+export const getAccessToken = () => {
+        return localStorage.getItem("access_token");
+};
 
 export const saveTokens = (access, refresh) => {
     localStorage.setItem("access_token", access);

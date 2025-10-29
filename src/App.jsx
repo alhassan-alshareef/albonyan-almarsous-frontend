@@ -4,6 +4,9 @@ import LoginPage from "./pages/LoginPage";
 import ProtectedRoute from "./pages/ProtectedRoute";
 import MyPosts from "./pages/patient/MyPosts";
 import PatientPosts from "./pages/supporter/PatientPosts";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+
 
 function App() {
   return (

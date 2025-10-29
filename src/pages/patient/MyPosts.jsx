@@ -1,11 +1,10 @@
-import React from 'react'
+import React from "react";
+import PatientHeader from "../../components/patient/PatientHeader";
 
-function MyPosts() {
+export default function MyPosts() {
   return (
-    <div>
-      
+    <div className="patient-page">
+      <PatientHeader />
     </div>
-  )
+  );
 }
-
-export default MyPosts
