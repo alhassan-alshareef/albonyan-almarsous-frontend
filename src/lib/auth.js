@@ -48,4 +48,5 @@ export const authRequest = async (config) => {
 
     config.headers = { ...config.headers, Authorization: `Bearer ${access}` };
     return axios(config);
+
 };
