@@ -76,10 +76,10 @@
 }
 
 .post-card__action:hover {
-  background: #f6f6f6;
+  background: #E9E9E9;
 }
 
-
+/* font delet and edit style */
 .material-symbols-outlined {
   font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
   font-size: 20px;

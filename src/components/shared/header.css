@@ -49,7 +49,7 @@
 }
 
 .search-input::placeholder {
-  color: #aaa;
+  color: #6f6d6d;
 }
 
 .dropdown-menu-custom {
@@ -70,10 +70,11 @@
 }
 
 .dropdown-menu-custom p:hover {
-  background-color: #ebebeb;
+  background: #E9E9E9;
+
 }
 
 .logout-text {
-  color: #d9534f;
+  color: #f0110a;
   font-weight: 500;
 }

@@ -1,5 +1,4 @@
 import React from "react";
-import "../../components/shared/header.css"; 
 import PatientHeader from "../../components/patient/PatientHeader";
 
 export default function AddPost() {
