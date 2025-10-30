@@ -5,6 +5,7 @@ import ProtectedRoute from "./pages/ProtectedRoute";
 import MyPosts from "./pages/patient/MyPosts";
 import PatientPosts from "./pages/supporter/PatientPosts";
 import AddPost from "./pages/patient/AddPost";
+import EditPost from "./pages/patient/EditPost";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
@@ -34,6 +35,8 @@ function App() {
           }
         />
         <Route path="/patient/add-post" element={<AddPost />} />
+        <Route path="/patient/edit-post/:id" element={<EditPost />} />
+
       </Routes>
     </Router>
   );

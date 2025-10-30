@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { clearTokens } from "../../lib/auth";
 import { getUserProfile } from "../../lib/api";
@@ -42,7 +42,7 @@ const PatientHeader = ({ showSearch = true , showHi = true }) => {
 
         {menuOpen && (
           <div className="dropdown-menu-custom">
-            <p onClick={() => navigate("/patient/account")}>My Account</p>
+            <p onClick={() => navigate("/profile")}>My Account</p>
             <p onClick={handleLogout} className="logout-text">
               Logout
             </p>

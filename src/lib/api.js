@@ -15,6 +15,10 @@ const authHeader = () => {
 export const getAllPosts = () =>
   axios.get(`${BASE_URL}/patient/posts/`, { headers: authHeader() });
 
+export const getPost = (id) =>
+  axios.get(`${BASE_URL}/patient/posts/${id}/`, { headers: authHeader() });
+
+
 //  Create a new post
 export const createPost = (data) =>
   axios.post(`${BASE_URL}/patient/posts/`, data, { headers: authHeader() });
