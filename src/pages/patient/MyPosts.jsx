@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom"; // ← أضف هذا السطر
 import PatientHeader from "../../components/patient/PatientHeader";
 import TabSwitcher from "../../components/shared/TabSwitcher";
 import PostCard from "../../components/PostCard/PostCard";
+import AddPostCard from "../../components/PostCard/AddPostCard";
 import { getAllPosts, deletePost } from "../../lib/api";
 
 export default function MyPosts() {
   const [posts, setPosts] = useState([]), [postToDelete, setPostToDelete] = useState(null);
+  const navigate = useNavigate(); // ← نفعّله هنا
 
   useEffect(() => { fetchPosts(); }, []);
 
@@ -37,6 +40,7 @@ export default function MyPosts() {
         {posts.length ? posts.map(p => (
           <PostCard key={p.id} post={p} onEdit={() => console.log("edit", p)} onDelete={() => setPostToDelete(p)} />
         )) : <p className="text-muted mt-5">No posts yet.</p>}
+            <AddPostCard label="Add Post" onClick={() => navigate("/patient/add-post")} />
       </div>
 
       {postToDelete && (

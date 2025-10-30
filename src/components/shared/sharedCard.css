@@ -1,0 +1,30 @@
+.add-card {
+  width: 100%;
+  max-width: 629px;
+  height: 227px;
+  border: 1px solid #C9C9C9;
+  border-radius: 8px;
+  background-color: #F6F6F6; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.add-card:hover {
+  background: #eaeaea; 
+}
+
+.add-card__icon {
+  font-size: 48px;
+  color: #2E2E2E; 
+  margin-bottom: 6px;
+}
+
+.add-card__text {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  color: #474646; 
+}
