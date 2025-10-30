@@ -4,7 +4,7 @@ import { clearTokens } from "../../lib/auth";
 import { getUserProfile } from "../../lib/api";
 import "../shared/header.css";
 
-const PatientHeader = ({ showSearch = true , showHi = true }) => {
+const PatientHeader = ({ showSearch = true , showHi = true ,onSearch }) => {
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
   const [profile, setProfile] = useState({ username: "", illness: "" });
@@ -52,9 +52,13 @@ const PatientHeader = ({ showSearch = true , showHi = true }) => {
 
       {showSearch && (
         <div className="search-box">
-          <input type="text" className="search-input" placeholder="Search your posts..." />
+          <input
+            type="text"
+            className="search-input"
+            placeholder="Search your posts..."
+            onChange={(e) => onSearch?.(e.target.value)}  />
         </div>
-      )}
+)}
     </header>
   );
 };

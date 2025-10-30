@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"; 
 import PatientHeader from "../../components/patient/PatientHeader";
 import TabSwitcher from "../../components/shared/TabSwitcher";
@@ -7,10 +7,14 @@ import AddPostCard from "../../components/PostCard/AddPostCard";
 import { getAllPosts, deletePost } from "../../lib/api";
 
 export default function MyPosts() {
-  const [posts, setPosts] = useState([]), [postToDelete, setPostToDelete] = useState(null);
+  const [posts, setPosts] = useState([]);
+  const [postToDelete, setPostToDelete] = useState(null);
+  const [searchTerm, setSearchTerm] = useState(""); 
   const navigate = useNavigate(); 
 
-  useEffect(() => { fetchPosts(); }, []);
+  useEffect(() => {
+    fetchPosts();
+  }, []);
 
   const fetchPosts = async () => {
     try {
@@ -24,23 +28,36 @@ export default function MyPosts() {
   const handleDelete = async () => {
     try {
       await deletePost(postToDelete.id);
-      setPosts(posts.filter(p => p.id !== postToDelete.id));
+      setPosts(posts.filter(post => post.id !== postToDelete.id));
       setPostToDelete(null);
     } catch (err) {
       console.log("Delete failed:", err);
     }
   };
 
+  const filteredPosts = posts.filter(p =>
+    p.content.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div className="patient-page">
-      <PatientHeader />
+      <PatientHeader onSearch={(value) => setSearchTerm(value)} />
       <TabSwitcher />
 
       <div className="d-flex flex-column align-items-center mt-4">
-        {posts.length ? posts.map(p => (
-          <PostCard key={p.id} post={p} onEdit={() => console.log("edit", p)} onDelete={() => setPostToDelete(p)} />
-        )) : <p className="text-muted mt-5">No posts yet.</p>}
-            <AddPostCard label="Add Post" onClick={() => navigate("/patient/add-post")} />
+        {filteredPosts.length ? (
+          filteredPosts.map(p => (
+            <PostCard
+              key={p.id}
+              post={p}
+              onEdit={() => navigate(`/patient/edit-post/${p.id}`)}
+              onDelete={() => setPostToDelete(p)}
+            />
+          ))
+        ) : (
+          <p className="text-muted mt-5">No posts found.</p>
+        )}
+        <AddPostCard label="Add Post" onClick={() => navigate("/patient/add-post")} />
       </div>
 
       {postToDelete && (

@@ -25,7 +25,7 @@ export default function AddPost() {
       setMessage("Post added successfully.");
       setContent("");
 
-      setTimeout(() => navigate("/patient/posts"), 1000);
+      setTimeout(() => navigate("/patient/posts"), 800);
     } catch (err) {
       console.log("Add post failed:", err);
       setMessage("Something went wrong. Try again.");
