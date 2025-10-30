@@ -4,7 +4,7 @@ import { clearTokens } from "../../lib/auth";
 import { getUserProfile } from "../../lib/api";
 import "../shared/header.css";
 
-const PatientHeader = () => {
+const PatientHeader = ({ showSearch = true , showHi = true }) => {
   const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
   const [profile, setProfile] = useState({ username: "", illness: "" });
@@ -34,7 +34,9 @@ const PatientHeader = () => {
       <div className="d-flex align-items-center position-relative">
         <div className="profile-circle" onClick={() => setMenuOpen(!menuOpen)} />
         <div className="ms-3">
-          <p className="user-name mb-0">Hi {profile.username}</p>
+          <p className="user-name mb-0">
+            {showHi ? `Hi ${profile.username}` : profile.username}
+          </p>
           <p className="user-subinfo mb-0">#{profile.illness}</p>
         </div>
 
@@ -48,13 +50,11 @@ const PatientHeader = () => {
         )}
       </div>
 
-      <div className="search-box">
-        <input
-          type="text"
-          className="search-input"
-          placeholder="Search your posts..."
-        />
-      </div>
+      {showSearch && (
+        <div className="search-box">
+          <input type="text" className="search-input" placeholder="Search your posts..." />
+        </div>
+      )}
     </header>
   );
 };

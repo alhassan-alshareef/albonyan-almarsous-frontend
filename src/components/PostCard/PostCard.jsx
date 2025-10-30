@@ -1,7 +1,7 @@
 import React from "react";
 import "../../App.css";
 
-export default function PostCard({ post, onEdit, onDelete }) {
+function PostCard({ post, onEdit, onDelete }) {
   const { patient, content } = post;
   const { username, illness } = patient;
 
@@ -32,4 +32,4 @@ export default function PostCard({ post, onEdit, onDelete }) {
     </div>
   );
 }
-
+export default  PostCard

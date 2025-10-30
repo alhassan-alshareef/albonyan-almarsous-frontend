@@ -1,11 +1,14 @@
-import React from 'react'
+import React from "react";
+import "../../components/shared/header.css"; 
+import PatientHeader from "../../components/patient/PatientHeader";
 
-function AddPost() {
+export default function AddPost() {
   return (
-    <div>
-      
+    <div className="patient-page">
+      <PatientHeader showSearch={false} showHi={false} />
+      <div className="text-center mt-4">
+        <h5>Add Post</h5>
+      </div>
     </div>
-  )
+  );
 }
-
-export default AddPost
