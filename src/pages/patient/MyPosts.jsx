@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom"; // ← أضف هذا السطر
+import { useNavigate } from "react-router-dom"; 
 import PatientHeader from "../../components/patient/PatientHeader";
 import TabSwitcher from "../../components/shared/TabSwitcher";
 import PostCard from "../../components/PostCard/PostCard";
@@ -8,7 +8,7 @@ import { getAllPosts, deletePost } from "../../lib/api";
 
 export default function MyPosts() {
   const [posts, setPosts] = useState([]), [postToDelete, setPostToDelete] = useState(null);
-  const navigate = useNavigate(); // ← نفعّله هنا
+  const navigate = useNavigate(); 
 
   useEffect(() => { fetchPosts(); }, []);
 
