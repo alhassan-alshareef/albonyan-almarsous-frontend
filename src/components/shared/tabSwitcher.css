@@ -1,0 +1,26 @@
+.tab-switcher {
+  border: 1px solid #dfdfdf;
+  border-radius: 8px;
+  width: 340px;
+  display: flex;
+}
+
+.tab-switcher .btn {
+  flex: 1;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #2e2e2e;
+  border: none;
+  background: #fff;
+  transition: 0.2s ease;
+}
+
+.tab-switcher .active-tab {
+  background-color: #3cb371;
+  color: #fff;
+}
+
+.tab-switcher .inactive-tab:hover {
+  background-color: #f6f6f6;
+}
