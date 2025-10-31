@@ -22,7 +22,7 @@ export default function AddPost() {
       setLoading(true);
       setMessage("");
       await createPost({ content });
-      setMessage("Post added successfully.");
+      setMessage("Post saved.");
       setContent("");
 
       setTimeout(() => navigate("/patient/posts"), 800);
@@ -55,7 +55,7 @@ export default function AddPost() {
         </button>
 
         {message && (
-          <p className={`mt-2 text-center ${message.includes("successfully") ? "text-success" : "text-danger"}`}>
+          <p className={`mt-2 text-center ${message.includes("saved") ? "text-success" : "text-danger"}`}>
             {message}
           </p>
         )}

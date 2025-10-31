@@ -23,14 +23,14 @@ export default function EditPost() {
     fetchPost();
   }, [id]);
 
-  const handleSave = async (e) => {
+  const handleUpdate = async (e) => {
     e.preventDefault();
     if (!content.trim()) return;
     setLoading(true);
 
     try {
       await updatePost(id, { content });
-      setMessage("Updated successfully");
+      setMessage("Post updated successfully.");
       setTimeout(() => navigate("/patient/posts"), 800);
     } catch (err) {
       console.log("Update failed:", err);
@@ -46,7 +46,7 @@ export default function EditPost() {
         <h5><strong>Edit Post</strong></h5>
       </div>
 
-      <form onSubmit={handleSave} className="add-post-box mx-auto mt-4">
+      <form onSubmit={handleUpdate} className="add-post-box mx-auto mt-4">
         <label className="add-post-label">Content</label>
         <textarea
           className="add-post-textarea"
