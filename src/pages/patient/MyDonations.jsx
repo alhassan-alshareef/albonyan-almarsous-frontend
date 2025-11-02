@@ -9,6 +9,7 @@ import { getPatientDonations, deleteDonation } from "../../lib/api";
 export default function MyDonations() {
   const [donations, setDonations] = useState([]);
   const [donationToDelete, setDonationToDelete] = useState(null);
+  const [searchTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate(); 
 
@@ -39,16 +40,20 @@ export default function MyDonations() {
     fetchDonations();
   }, []);
 
+  const filteredDonations = donations.filter(donation =>
+  donation.title.toLowerCase().includes(searchTerm.toLowerCase())
+);
+
   return (
     <div className="patient-page">
-      <PatientHeader />
+      <PatientHeader onSearch={(value) => setSearchTerm(value)} />
       <TabSwitcher />
 
       <div className="d-flex flex-column align-items-center mt-4">
         {loading ? (
           <p className="text-muted mt-5">Loading donations...</p>
-        ) : donations.length ? (
-          donations.map((donation) => (
+        ) : filteredDonations.length ? (
+          filteredDonations.map((donation) => (
             <DonationCard
               key={donation.id}
               donation={donation}

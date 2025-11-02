@@ -32,7 +32,9 @@ const PatientHeader = ({ showSearch = true , showHi = true ,onSearch }) => {
   return (
     <header className="main-header">
       <div className="d-flex align-items-center position-relative">
-        <div className="profile-circle" onClick={() => setMenuOpen(!menuOpen)} />
+        <div className="profile-circle" onClick={() => setMenuOpen(!menuOpen)}>
+            <span className="material-symbols-outlined">account_circle</span>
+        </div>
         <div className="ms-3">
           <p className="user-name mb-0">
             {showHi ? `Hi ${profile.username}` : profile.username}

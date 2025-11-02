@@ -17,7 +17,9 @@ export default function DonationCard({ donation, onDelete }) {
   return (
     <div className="donation-card">
       <div className="donation-card__header">
-        <div className="donation-card__avatar" />
+        <div className="donation-card__avatar">
+          <span className="material-symbols-outlined donation-avatar-icon">account_circle</span>
+        </div>
         <div className="donation-card__info">
           <div className="donation-card__top-row">
             <p className="donation-card__name">{username}</p>

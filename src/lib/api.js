@@ -43,7 +43,6 @@ export const getUserProfile = () =>
 export const updateUserProfile = (data) =>
   axios.put(`${BASE_URL}/profile/`, data, { headers: authHeader() });
 
-
 /* ================================
           DONATIONS
 ================================ */

@@ -16,7 +16,9 @@ function PostCard({ post, onDelete }) {
 return (
     <div className="post-card">
       <div className="post-card__header">
-        <div className="post-card__avatar" />
+        <div className="donation-card__avatar">
+          <span className="material-symbols-outlined donation-avatar-icon">account_circle</span>
+        </div>
         <div className="post-card__info">
           <div className="post-card__top-row">
             <p className="post-card__name">{username}</p>

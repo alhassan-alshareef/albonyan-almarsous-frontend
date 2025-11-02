@@ -46,15 +46,15 @@ export default function EditPost() {
         <h5><strong>Edit Post</strong></h5>
       </div>
 
-      <form onSubmit={handleUpdate} className="add-post-box mx-auto mt-4">
+      <form onSubmit={handleUpdate} className="add-form-box mx-auto mt-4">
         <label className="add-post-label">Content</label>
         <textarea
-          className="add-post-textarea"
+          className="add-form-textarea"
           placeholder="Write your update..."
           value={content}
           onChange={(e) => setContent(e.target.value)}
         />
-        <button type="submit" className="add-post-btn" disabled={loading}>
+        <button type="submit" className="add-form-btn" disabled={loading}>
           {loading ? "Saving..." : "Save"}
         </button>
 
