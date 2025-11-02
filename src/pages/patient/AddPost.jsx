@@ -41,16 +41,16 @@ export default function AddPost() {
         <h5><strong>Add Post</strong></h5>
       </div>
 
-      <form onSubmit={handleAddPost} className="add-post-box mx-auto mt-4">
-        <label className="add-post-label">Content</label>
+      <form onSubmit={handleAddPost} className="add-form-box mx-auto mt-4">
+        <label className="add-form-label">Content</label>
         <textarea
-          className="add-post-textarea"
+          className="add-form-textarea"
           placeholder="Write something..."
           value={content}
           onChange={(e) => setContent(e.target.value)}
         />
 
-        <button type="submit" className="add-post-btn" disabled={loading}>
+        <button type="submit" className="add-form-btn" disabled={loading}>
           {loading ? "Posting..." : "Post"}
         </button>
 

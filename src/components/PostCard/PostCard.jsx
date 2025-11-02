@@ -8,9 +8,11 @@ function PostCard({ post, onDelete }) {
   const { username, illness } = patient;
   const navigate = useNavigate();
 
-  const formattedDate = new Date(post.created_at).toLocaleString("en-US", {
-});
-
+  const formattedDate = new Date(created_at).toLocaleString("en-US", {
+    dateStyle: "medium",
+    timeStyle: "short",
+  });
+  
 return (
     <div className="post-card">
       <div className="post-card__header">

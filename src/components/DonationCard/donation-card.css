@@ -1,0 +1,194 @@
+.donation-card {
+  width: 100%;
+  max-width: 630px;
+  margin: 16px auto;
+  background: #f6f6f6;
+  border: 1px solid #c9c9c9;
+  border-radius: 15px;
+  font-family: "Roboto", sans-serif;
+  overflow: hidden;
+}
+
+/* ===== Header ===== */
+.donation-card__header {
+  display: flex;
+  gap: 12px;
+  padding: 16px 18px 0;
+}
+
+.donation-card__avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #d9d9d9;
+}
+
+.donation-card__info {
+  flex: 1;
+}
+
+.donation-card__top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.donation-card__name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2e2e2e;
+  margin: 0;
+}
+
+.donation-card__illness,
+.donation-card__date {
+  font-size: 12px;
+  color: #9e9e9e;
+  margin: 0;
+}
+
+/* ===== Content ===== */
+.donation-card__content {
+  padding: 8px 18px 14px;
+  font-size: 14px;
+  color: #2e2e2e;
+  line-height: 1.5;
+  margin-left: 48px;
+}
+
+.donation-card__content h4 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.donation-card__desc {
+  margin-bottom: 16px;
+}
+
+/* ===== Progress Bar ===== */
+.progress-bar {
+  width: 100%;
+  height: 18px;
+  background: #e9e9e9;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 10px;
+  background: #166c40;
+  transition: width 0.4s ease;
+  position: relative;
+}
+
+.progress-label {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.progress-fill[style*="width: 0%"] {
+  background: #d3d3d3;
+}
+
+.progress-fill[style*="width: 0%"] .progress-label {
+  color: #2e2e2e;
+  left: 6px;
+  right: auto;
+}
+
+/* ===== Actions ===== */
+.donation-card__actions {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  border-top: 1px solid #dfdfdf;
+}
+
+.donation-card__action {
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  color: #2e2e2e;
+  padding: 10px 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.2s;
+}
+
+.donation-card__action:hover {
+  background: #e9e9e9;
+}
+
+.post-card__divider {
+  width: 1px;
+  height: 32px;
+  background: #dfdfdf;
+}
+
+.donation-card__action--delete {
+  color: #d9534f;
+}
+
+.donation-card__action--delete:hover {
+  background: #f8d7da;
+}
+
+/* ===== Delete Modal ===== */
+.delete-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.delete-modal {
+  background: #fff;
+  padding: 20px 25px;
+  border-radius: 8px;
+  width: 300px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.delete-modal p {
+  font-size: 15px;
+  color: #333;
+  margin-bottom: 14px;
+}
+
+.btn {
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 13px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  background: #c9c9c9;
+  color: #333;
+}
+
+.btn-danger {
+  background: #d9534f;
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  background: #b3b3b3;
+}
+
+.btn-danger:hover {
+  background: #c9302c;
+}

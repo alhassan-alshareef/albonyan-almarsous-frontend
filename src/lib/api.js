@@ -42,3 +42,28 @@ export const getUserProfile = () =>
 // Update user profile
 export const updateUserProfile = (data) =>
   axios.put(`${BASE_URL}/profile/`, data, { headers: authHeader() });
+
+
+/* ================================
+          DONATIONS
+================================ */
+
+// Get all donations (for the logged-in patient)
+export const getPatientDonations = () =>
+  axios.get(`${BASE_URL}/patient/donations/`, { headers: authHeader() });
+
+// Get a single donation
+export const getDonation = (donationId) =>
+  axios.get(`${BASE_URL}/patient/donations/${donationId}/`, { headers: authHeader() });
+
+// Create a new donation
+export const createDonation = (data) =>
+  axios.post(`${BASE_URL}/patient/donations/`, data, { headers: authHeader() });
+
+// Update a donation
+export const updateDonation = (donationId, data) =>
+  axios.put(`${BASE_URL}/patient/donations/${donationId}/`, data, { headers: authHeader() });
+
+// Delete a donation
+export const deleteDonation = (donationId) =>
+  axios.delete(`${BASE_URL}/patient/donations/${donationId}/`, { headers: authHeader() });

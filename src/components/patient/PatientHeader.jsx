@@ -55,7 +55,7 @@ const PatientHeader = ({ showSearch = true , showHi = true ,onSearch }) => {
           <input
             type="text"
             className="search-input"
-            placeholder="Search your posts..."
+            placeholder="Search something"
             onChange={(e) => onSearch?.(e.target.value)}  />
         </div>
 )}

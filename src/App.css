@@ -85,6 +85,15 @@
   align-items: center;
   width: 100%;
 }
+.post-card__action--delete {
+  color: #d9534f;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.post-card__action--delete:hover {
+  background: #f8d7da;
+}
 
 .post-card__name {
   font-size: 14px;
@@ -107,6 +116,7 @@
   flex-direction: column;
   width: 100%;
 }
+
 
 /* font delet and edit style */
 .material-symbols-outlined {
@@ -142,40 +152,52 @@
 /* 
         add-post page
  */
-.add-post-box {
+.add-form-box {
   width: 100%;
   max-width: 517px;
-  margin: 70px auto; 
+  margin: 70px auto;
   display: flex;
   flex-direction: column;
-  gap: 10px; 
+  gap: 10px;
 }
 
-.add-post-label {
-  font-family: "Roboto", sans-serif;
+.add-form-label {
   font-size: 15px;
   color: #000;
-  margin-bottom: 2px; 
 }
 
-.add-post-textarea {
+.add-form-input,
+.add-form-textarea {
   width: 100%;
-  height: 230px;
   border: 1px solid #bababa;
   border-radius: 8px;
   padding: 12px;
   font-size: 14px;
-  font-family: inherit; 
-  resize: none;
   outline: none;
+  color: #2e2e2e;
+}
+
+.add-form-textarea {
+  height: 230px;
+  resize: none;
   line-height: 1.5;
 }
 
-.add-post-textarea:focus {
-  border-color: #3cb371; 
+.add-form-input:focus,
+.add-form-textarea:focus {
+  border-color: #3cb371;
 }
 
-.add-post-btn {
+/* remove number arrows */
+.add-form-input[type="number"] {
+  -moz-appearance: textfield;
+}
+.add-form-input::-webkit-outer-spin-button,
+.add-form-input::-webkit-inner-spin-button {
+  display: none;
+}
+
+.add-form-btn {
   background: #3cb371;
   color: #fff;
   border: 0;
@@ -187,6 +209,6 @@
   margin-top: 12px;
 }
 
-.add-post-btn:hover {
+.add-form-btn:hover {
   background: #35a368;
 }
