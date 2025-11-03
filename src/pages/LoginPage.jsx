@@ -21,7 +21,7 @@ export default function LoginPage() {
       const res = await axios.post(`${import.meta.env.VITE_API_URL}/login/`, formData);
       const { access, refresh, user } = res.data;
 
-      saveTokens(access, refresh);
+      saveTokens(access, refresh, user);
 
       if (user.role !== role) {
         clearTokens();

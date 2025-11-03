@@ -5,9 +5,13 @@ export const getAccessToken = () => {
         return localStorage.getItem("access_token");
 };
 
-export const saveTokens = (access, refresh) => {
+export const saveTokens = (access, refresh, user) => {
     localStorage.setItem("access_token", access);
     localStorage.setItem("refresh_token", refresh);
+
+    if (user?.role) {
+        localStorage.setItem("user_role", user.role);
+    }
 };
 
 // Load tokens
@@ -20,12 +24,24 @@ export const getTokens = () => ({
 export const clearTokens = () => {
     localStorage.removeItem("access_token");
     localStorage.removeItem("refresh_token");
+    localStorage.removeItem("user_role");
+    
 };
 
 // Decode access token
 export const getUserFromToken = () => {
     const token = localStorage.getItem("access_token");
-    return token ? jwtDecode(token) : null;
+    const role = localStorage.getItem("user_role");
+    
+    if (!token) return null;
+
+    try {
+        const decoded = jwtDecode(token);
+        return { ...decoded, role };
+    } catch (err) {
+        console.error("Invalid token:", err);
+        return null;
+    }
 };
 
 // Authenticated request with auto-refresh
