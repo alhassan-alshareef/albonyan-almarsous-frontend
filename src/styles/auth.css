@@ -4,12 +4,14 @@
 }
 
 .auth-image {
-  background-color: #e0e0e0;
+  background: url("/src/images/login-signup.png") no-repeat center center;
+  background-size: cover;
 }
 
 .auth-form {
   width: 100%;
   max-width: 400px;
+  
 }
 
 .auth-title {
@@ -19,6 +21,7 @@
 .role-toggle {
   border-radius: 6px;
   overflow: hidden;
+  border: 1px solid #ccc;
 }
 
 .role-active {

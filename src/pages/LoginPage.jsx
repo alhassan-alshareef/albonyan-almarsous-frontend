@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import { saveTokens, clearTokens } from "../lib/auth.js";
@@ -45,7 +45,7 @@ export default function LoginPage() {
           <div className="auth-form">
             <h3 className="fw-bold mb-4 auth-title">Login</h3>
 
-            <div className="btn-group w-100 mb-4" role="group">
+            <div className="role-toggle mb-4">
               <button type="button" className={`btn w-50 ${role === "supporter" ? "role-active" : "role-inactive"}`} onClick={() => setRole("supporter")}>User</button>
               <button type="button" className={`btn w-50 ${role === "patient" ? "role-active" : "role-inactive"}`} onClick={() => setRole("patient")}>Patient</button>
             </div>
