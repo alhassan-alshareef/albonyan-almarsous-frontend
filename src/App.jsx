@@ -18,6 +18,7 @@ import EditDonation from "./pages/patient/EditDonation";
 //  Supporter
 import AllPatientsPosts from "./pages/supporter/AllPatientsPost";
 import DonationsPage from "./pages/supporter/DonationsPage";
+import DonationPay from "./pages/supporter/DonationPay";
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
         {/* Supporter */}
         <Route path="/posts" element={<ProtectedRoute allowedRole="supporter"><AllPatientsPosts /></ProtectedRoute>} />
         <Route path="/donations" element={<ProtectedRoute allowedRole="supporter"><DonationsPage /></ProtectedRoute>} />
+        <Route path="/donations/:id/pay"  element={<ProtectedRoute allowedRole="supporter"><DonationPay /></ProtectedRoute>}/>
       </Routes>
     </Router>
   );

@@ -1,0 +1,155 @@
+.donation-pay-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 0 16px;
+  background: #fff;
+}
+
+.donation-pay-card {
+  width: 700px;
+  max-width: 95%;
+  padding: 28px 32px;
+}
+
+.donation-pay-title {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+  color: #111;
+  margin-bottom: 24px;
+}
+
+/* progress bar */
+.progress-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 32px;
+}
+
+.progress-side {
+  width: 40px;
+  text-align: center;
+  font-size: 14px;
+  color: #222;
+  transform: translateY(3px);
+}
+
+.progress-wrapper {
+  flex: 1;
+}
+
+.progress-bar {
+  height: 18px;
+  background: #eaeaea;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #166c40;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* form */
+.label-strong {
+  font-weight: 500; /* خففت الخط */
+  margin-bottom: 6px;
+  display: block;
+  color: #111;
+}
+
+.label-normal {
+  font-weight: 500;
+  margin-bottom: 6px;
+  display: block;
+  color: #333;
+}
+
+.input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 18px;
+  box-sizing: border-box;
+}
+
+/* إزالة الأسهم من input number */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.amount-input {
+  width: 125px;
+  height: 65px;
+}
+
+.name-input {
+  width: 282px;
+  height: 65px;
+}
+
+.card-row {
+  display: flex;
+  gap: 22px;
+  align-items: flex-start;
+  margin-bottom: 22px;
+}
+
+.card-col {
+  flex: 1;
+}
+
+.card-number-col {
+  flex: 2;
+}
+
+/* button */
+.pay-btn {
+  width: 100%;
+  height: 50px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+}
+
+.pay-btn:hover {
+  background: #111;
+}
+
+/* message */
+.message {
+  text-align: center;
+  margin-top: 14px;
+  font-size: 15px;
+}
+
+.message.success {
+  color: #2e9a5d;
+}
+
+.message.danger {
+  color: #c0392b;
+}

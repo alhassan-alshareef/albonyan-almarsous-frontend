@@ -71,12 +71,12 @@ export const deleteDonation = (donationId) =>
       DONATIONS (SUPPORTER)
 ================================ */
 
-// Get all active donations (for supporters)
 export const getAllDonations = () =>
   axios.get(`${BASE_URL}/donations/`, { headers: authHeader() });
 
-// Donate to a campaign
-export const makeDonationPayment = (donationId, data) =>
-  axios.post(`${BASE_URL}/donations/${donationId}/pay/`, data, {
-    headers: authHeader(),
-  });
+
+export const getDonationDetails = (donationId) =>
+  axios.get(`${BASE_URL}/donations/${donationId}/`, { headers: authHeader() });
+
+export const payDonation = (donationId, data) =>
+  axios.post(`${BASE_URL}/donations/${donationId}/pay/`, data, { headers: authHeader() });
