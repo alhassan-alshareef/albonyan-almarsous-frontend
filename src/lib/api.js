@@ -66,3 +66,17 @@ export const updateDonation = (donationId, data) =>
 // Delete a donation
 export const deleteDonation = (donationId) =>
   axios.delete(`${BASE_URL}/patient/donations/${donationId}/`, { headers: authHeader() });
+
+/* ================================
+      DONATIONS (SUPPORTER)
+================================ */
+
+// Get all active donations (for supporters)
+export const getAllDonations = () =>
+  axios.get(`${BASE_URL}/donations/`, { headers: authHeader() });
+
+// Donate to a campaign
+export const makeDonationPayment = (donationId, data) =>
+  axios.post(`${BASE_URL}/donations/${donationId}/pay/`, data, {
+    headers: authHeader(),
+  });

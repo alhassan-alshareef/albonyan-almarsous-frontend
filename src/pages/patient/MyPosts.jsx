@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"; 
-import PatientHeader from "../../components/patient/PatientHeader";
+import PatientHeader from "../../components/Header/PatientHeader";
 import TabSwitcher from "../../components/shared/TabSwitcher";
 import PostCard from "../../components/PostCard/PostCard";
 import AddCard from "../../components/shared/AddCard";

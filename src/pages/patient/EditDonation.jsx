@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { getDonation, updateDonation } from "../../lib/api";
-import PatientHeader from "../../components/patient/PatientHeader";
+import PatientHeader from "../../components/Header/PatientHeader";
 import "../../App.css";
 
 export default function EditDonation() {

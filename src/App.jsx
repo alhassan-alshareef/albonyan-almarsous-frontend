@@ -4,12 +4,13 @@ import LoginPage from "./pages/LoginPage";
 import ProfilePage from "./pages/ProfilePage";
 import ProtectedRoute from "./pages/ProtectedRoute";
 import MyPosts from "./pages/patient/MyPosts";
-import PatientPosts from "./pages/supporter/PatientPosts";
 import AddPost from "./pages/patient/AddPost";
 import EditPost from "./pages/patient/EditPost";
 import MyDonations from "./pages/patient/MyDonations";
 import AddDonation from "./pages/patient/AddDonation";
 import EditDonation from "./pages/patient/EditDonation";
+import AllPatientsPosts from "./pages/supporter/AllPatientsPost";
+import DonationsPage from "./pages/supporter/DonationsPage";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
@@ -35,7 +36,7 @@ function App() {
           path="/posts"
           element={
             <ProtectedRoute>
-              <PatientPosts />
+              <AllPatientsPosts />
             </ProtectedRoute>
           }
         />
@@ -45,6 +46,11 @@ function App() {
         <Route path="/patient/donations" element={<MyDonations />} />
         <Route path="/patient/add-donation" element={<AddDonation />} />
         <Route path="/patient/edit-donation/:id" element={<EditDonation />} />
+
+        <Route path="/donations" element={<DonationsPage />} />
+        
+
+        
 
       </Routes>
     </Router>

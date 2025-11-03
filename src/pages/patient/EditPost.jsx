@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { getPost, updatePost } from "../../lib/api";
-import PatientHeader from "../../components/patient/PatientHeader";
+import PatientHeader from "../../components/Header/PatientHeader";
 import "../../App.css";
 
 export default function EditPost() {

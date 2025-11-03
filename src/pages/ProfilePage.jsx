@@ -1,53 +1,69 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import PatientHeader from "../components/patient/PatientHeader";
+import PatientHeader from "../components/Header/PatientHeader";
 import { getUserProfile, updateUserProfile } from "../lib/api";
 import "../App.css";
 
 export default function ProfilePage() {
   const navigate = useNavigate();
   const [profile, setProfile] = useState({});
-  const [status, setStatus] = useState({ loading: false, message: "" });
+  const [status, setStatus] = useState({ loading: false, message: "", success: false });
 
   useEffect(() => {
-    (async () => {
+    const fetchProfile = async () => {
       try {
         const { data } = await getUserProfile();
         setProfile(data);
-      } catch {
-        console.error("Failed to load profile");
+      } catch (err) {
+        console.error("Failed to load profile:", err);
       }
-    })();
+    };
+    fetchProfile();
   }, []);
 
-  const handleChange = ({ target: { name, value } }) =>
+  const handleChange = (e) => {
+    const { name, value } = e.target;
     setProfile((prev) => ({ ...prev, [name]: value }));
+  };
 
   const handleSave = async (e) => {
     e.preventDefault();
-    setStatus({ loading: true, message: "" });
+    setStatus({ loading: true, message: "", success: false });
 
     try {
       await updateUserProfile(profile);
-      setStatus({ loading: false, message: "Profile updated successfully." });
-      setTimeout(() => navigate("/patient/posts"), 800);
-    } catch {
-      setStatus({ loading: false, message: "Something went wrong." });
+      setStatus({
+        loading: false,
+        message: "Profile updated successfully.",
+        success: true,
+      });
+
+      setTimeout(() => {
+        if (profile.role === "patient") {
+          navigate("/patient/posts");
+        } else {
+          navigate("/posts");
+        }
+      }, 800);
+    } catch (err) {
+      console.error("Profile update failed:", err);
+      setStatus({
+        loading: false,
+        message: "Something went wrong.",
+        success: false,
+      });
     }
   };
 
-  const commonFields = [
+  const fields = [
     { label: "Username", name: "username", type: "text" },
     { label: "Email", name: "email", type: "email" },
     { label: "First Name", name: "first_name", type: "text" },
     { label: "Last Name", name: "last_name", type: "text" },
+    ...(profile.role === "patient"
+      ? [{ label: "Illness", name: "illness", type: "text" }]
+      : []),
   ];
-
-  const patientFields =
-    profile.role === "patient"
-      ? [...commonFields, { label: "Illness", name: "illness", type: "text" }]
-      : commonFields;
-
 
   return (
     <div className="patient-page">
@@ -55,11 +71,13 @@ export default function ProfilePage() {
 
       <div className="text-center mt-5">
         <h5><strong>My Profile</strong></h5>
-        <p className="text-muted">{profile.role === "patient" ? "Patient Account" : "Supporter Account"}</p>
+        <p className="text-muted">
+          {profile.role === "patient" ? "Patient Account" : "Supporter Account"}
+        </p>
       </div>
 
       <form onSubmit={handleSave} className="add-form-box mx-auto mt-4">
-        {patientFields.map(({ label, name, type }) => (
+        {fields.map(({ label, name, type }) => (
           <div key={name}>
             <label className="add-form-label">{label}</label>
             <input
@@ -83,7 +101,7 @@ export default function ProfilePage() {
         {status.message && (
           <p
             className={`mt-2 text-center ${
-              status.message.includes("success") ? "text-success" : "text-danger"
+              status.success ? "text-success" : "text-danger"
             }`}
           >
             {status.message}

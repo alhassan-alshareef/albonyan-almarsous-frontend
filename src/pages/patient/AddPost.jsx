@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import PatientHeader from "../../components/patient/PatientHeader";
+import PatientHeader from "../../components/Header/PatientHeader";
 import { createPost } from "../../lib/api";
 import "../../App.css";
 
