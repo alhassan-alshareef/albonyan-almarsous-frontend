@@ -80,3 +80,45 @@ export const getDonationDetails = (donationId) =>
 
 export const payDonation = (donationId, data) =>
   axios.post(`${BASE_URL}/donations/${donationId}/pay/`, data, { headers: authHeader() });
+
+
+
+/* ================================
+          COMMENTS 
+================================ */
+
+//  Get all comments for a specific post
+export const getComments = (postId) =>
+  axios.get(`${BASE_URL}/posts/${postId}/comments/`, {
+    headers: authHeader(),
+  });
+
+//  Add a comment
+export const addComment = (postId, data) =>
+  axios.post(`${BASE_URL}/posts/${postId}/comments/`, data, {
+    headers: authHeader(),
+  });
+
+//  Edit a comment (only by owner)
+export const updateComment = (commentId, data) =>
+  axios.put(`${BASE_URL}/comments/${commentId}/`, data, {
+    headers: authHeader(),
+  });
+
+//  Delete a comment (only by owner)
+export const deleteComment = (commentId) =>
+  axios.delete(`${BASE_URL}/comments/${commentId}/`, {
+    headers: authHeader(),
+  });
+
+/* ================================
+              LIKES
+================================ */
+
+//  Like / Unlike a post (supporter only)
+export const toggleLike = (postId) =>
+  axios.post(`${BASE_URL}/posts/${postId}/like/`, {}, {
+    headers: authHeader(),
+  });
+
+

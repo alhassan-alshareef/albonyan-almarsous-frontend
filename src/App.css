@@ -224,3 +224,13 @@
 
 
 
+.post-card__action.liked .material-symbols-outlined {
+  color: #e74c3c; 
+}
+
+.post-card__action.liked {
+  color: #e74c3c;
+}
+
+
+

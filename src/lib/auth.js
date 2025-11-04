@@ -9,9 +9,8 @@ export const saveTokens = (access, refresh, user) => {
     localStorage.setItem("access_token", access);
     localStorage.setItem("refresh_token", refresh);
 
-    if (user?.role) {
-        localStorage.setItem("user_role", user.role);
-    }
+    if (user?.role) localStorage.setItem("user_role", user.role);
+    if (user?.username) localStorage.setItem("username", user.username);
 };
 
 // Load tokens
@@ -32,12 +31,13 @@ export const clearTokens = () => {
 export const getUserFromToken = () => {
     const token = localStorage.getItem("access_token");
     const role = localStorage.getItem("user_role");
+    const username = localStorage.getItem("username");
     
     if (!token) return null;
 
     try {
         const decoded = jwtDecode(token);
-        return { ...decoded, role };
+        return { ...decoded, role, username: decoded.username || username  };
     } catch (err) {
         console.error("Invalid token:", err);
         return null;

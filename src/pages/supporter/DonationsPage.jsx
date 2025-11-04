@@ -28,8 +28,13 @@ export default function DonationsPage() {
       <TabSwitcher />
 
       <div className="d-flex flex-column align-items-center mt-5">
+        <h2 className="text-muted">All Active Donations</h2>
+        <p className="text-secondary mt-2"/>
+      </div>
+
+      <div className="d-flex flex-column align-items-center mt-4">
         {loading ? (
-          <p>Loading donations...</p>
+          <p className="text-muted">Loading donations...</p>
         ) : donations.length === 0 ? (
           <p className="text-muted">No active campaigns found.</p>
         ) : (
