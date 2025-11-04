@@ -93,6 +93,11 @@ export const getComments = (postId) =>
     headers: authHeader(),
   });
 
+export const getComment = (commentId) =>
+  axios.get(`${BASE_URL}/comments/${commentId}/`, {
+    headers: authHeader(),
+  });
+  
 //  Add a comment
 export const addComment = (postId, data) =>
   axios.post(`${BASE_URL}/posts/${postId}/comments/`, data, {

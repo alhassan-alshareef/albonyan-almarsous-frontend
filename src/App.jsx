@@ -20,6 +20,7 @@ import AllPatientsPosts from "./pages/supporter/AllPatientsPost";
 import DonationsPage from "./pages/supporter/DonationsPage";
 import DonationPay from "./pages/supporter/DonationPay";
 import CommentPage from "./pages/supporter/CommentsPage";
+import EditCommentPage from "./pages/supporter/EditCommentPage";
 
 
 function App() {
@@ -51,6 +52,7 @@ function App() {
         {/* Supporter */}
         <Route path="/posts" element={<ProtectedRoute allowedRole="supporter"><AllPatientsPosts /></ProtectedRoute>} />
         <Route path="/posts/:id/comments" element={<ProtectedRoute allowedRole="supporter"><CommentPage /></ProtectedRoute>}/>
+        <Route path="/comments/:id/edit" element={<ProtectedRoute allowedRole="supporter"><EditCommentPage /></ProtectedRoute>}/>
         <Route path="/donations" element={<ProtectedRoute allowedRole="supporter"><DonationsPage /></ProtectedRoute>} />
         <Route path="/donations/:id/pay"  element={<ProtectedRoute allowedRole="supporter"><DonationPay /></ProtectedRoute>}/>
       </Routes>

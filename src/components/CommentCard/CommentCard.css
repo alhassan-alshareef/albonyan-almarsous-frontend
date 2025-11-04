@@ -1,0 +1,109 @@
+
+.comment-card-new {
+  width: 100%;
+  max-width: 629px;
+  margin: 10px auto;
+  background-color: #ededed;
+  border: 1px solid #c4c4c4;
+  border-radius: 14px;
+  font-family: "Roboto", sans-serif;
+  padding: 10px 16px;
+}
+
+
+.comment-card-header {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.comment-card-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #d3d3d3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.comment-card-info {
+  flex: 1;
+}
+
+.comment-card-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2px;
+}
+
+.comment-card-name {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #2e2e2e;
+}
+
+.comment-card-date {
+  font-size: 12.5px;
+  color: #9c9c9c;
+}
+
+.comment-card-content {
+  padding: 4px 0 10px 44px;
+  font-size: 13.5px;
+  color: #2e2e2e;
+  line-height: 1.4;
+  white-space: pre-wrap;
+}
+
+.comment-card-actions {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  align-items: center;
+  border-top: 1px solid #d2d2d2;
+  margin-top: 6px;
+  padding: 6px 0 5px 0;
+  
+}
+
+.comment-card-divider-vertical {
+  width: 1px;
+  height: 22px;
+  background: #d0d0d0;
+  justify-self: center;
+}
+
+.comment-card-action {
+  border: none;
+  background: transparent;
+  font-size: 13px;
+  color: #2e2e2e;
+  padding: 3px 0; 
+  width: 100%;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.comment-card-action:hover {
+  background: #e0e0e0; 
+}
+
+.comment-card-action.delete {
+  color: #d9534f;
+}
+
+.comment-card-action.delete:hover {
+  background: #f8d7da;
+  color: #b52b27;
+}
+
+/* ===== Divider between comments ===== */
+.comment-card-separator {
+  width: 100%;
+  max-width: 629px;
+  height: 1px;
+  background: #d3d3d3;
+  margin: 12px auto;
+  opacity: 0.7;
+}
