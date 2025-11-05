@@ -25,9 +25,9 @@
 }
 
 .role-active {
-  background-color: #3cb371;
+  background-color: #198754;
   color: #fff;
-  border: 1px solid #3cb371;
+  border: 1px solid #198754;
   font-weight: 500;
 }
 
@@ -50,12 +50,12 @@
 }
 
 .primary-btn {
-  background-color: #3cb371;
+  background-color: #198754;
   color: #fff;
   font-weight: 500;
   border: none;
 }
 
 .primary-btn:hover {
-  background-color: #35a368;
+  background-color: #198754;
 }

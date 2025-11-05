@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 import "../../App.css";
 
 function PostCard({ post, onDelete }) {
-  const { patient, content, created_at  } = post;
-  const postId = post.id; 
+  const { patient, content, created_at } = post;
+  const postId = post.id;
   const { username, illness } = patient;
   const navigate = useNavigate();
 
@@ -12,12 +12,14 @@ function PostCard({ post, onDelete }) {
     dateStyle: "medium",
     timeStyle: "short",
   });
-  
-return (
+
+  return (
     <div className="post-card">
       <div className="post-card__header">
         <div className="donation-card__avatar">
-          <span className="material-symbols-outlined donation-avatar-icon">account_circle</span>
+          <span className="material-symbols-outlined donation-avatar-icon">
+            account_circle
+          </span>
         </div>
         <div className="post-card__info">
           <div className="post-card__top-row">
@@ -30,14 +32,25 @@ return (
 
       <div className="post-card__content">{content}</div>
 
-      <div className="post-card__actions">
+      <div className="post-card__actions post-card__actions--three">
         <button
           onClick={() => navigate(`/patient/edit-post/${postId}`)}
           className="post-card__action"
         >
           <span className="material-symbols-outlined me-2">edit</span> Edit
         </button>
+
         <span className="post-card__divider" />
+
+        <button
+          onClick={() => navigate(`/patient/post/${postId}/comments`)}
+          className="post-card__action post-card__action--view"
+        >
+          <span className="material-symbols-outlined me-2">chat_bubble_outline</span> Comments
+        </button>
+
+        <span className="post-card__divider" />
+
         <button
           onClick={() => onDelete?.(post)}
           className="post-card__action post-card__action--delete"
@@ -48,4 +61,5 @@ return (
     </div>
   );
 }
+
 export default PostCard;

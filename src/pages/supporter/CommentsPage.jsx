@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import SupporterHeader from "../../components/Header/SupporterHeader";
 import SupporterPostCard from "../../components/PostCard/SupporterPostCard";
 import CommentCard from "../../components/CommentCard/CommentCard";
-import ModalConfirm from "../../components/shared/ModalConfirm"; // ✅ استدعاء المكون الجديد
+import ModalConfirm from "../../components/shared/ModalConfirm"; 
 import { getPost, addComment, deleteComment } from "../../lib/api";
 import { getUserFromToken } from "../../lib/auth";
 import "../../styles/comment-page.css";

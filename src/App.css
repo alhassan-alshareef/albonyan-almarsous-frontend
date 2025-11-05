@@ -127,6 +127,23 @@
 }
 
 
+.post-card__actions--three {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr 1px 1fr;
+  align-items: center;
+}
+
+
+.post-card__action--view {
+  color: #198754;
+  font-weight: 500;
+}
+
+.post-card__action--view:hover {
+  background: #d6f5e3;
+}
+
+
 /* font delet and edit style */
 .material-symbols-outlined {
   font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
@@ -194,7 +211,7 @@
 
 .add-form-input:focus,
 .add-form-textarea:focus {
-  border-color: #3cb371;
+  border-color: #198754;
 }
 
 /* remove number arrows */
@@ -207,7 +224,7 @@
 }
 
 .add-form-btn {
-  background: #3cb371;
+  background: #198754;
   color: #fff;
   border: 0;
   padding: 10px 0;
@@ -219,7 +236,7 @@
 }
 
 .add-form-btn:hover {
-  background: #35a368;
+  background: #198754;
 }
 
 
