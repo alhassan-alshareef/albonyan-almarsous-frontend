@@ -1,7 +1,7 @@
 import ContactForm from "./ContactForm";
 const ContactUs = () => {
   return (
-    <div className="row">
+    <div id="contact" className="row">
       <div className="col-lg-6 d-none d-lg-block">
         <img src="/images/model-banner.png" alt="Contact banner"/>
       </div>

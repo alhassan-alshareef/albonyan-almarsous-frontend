@@ -229,6 +229,13 @@ footer {
   color: #fff;
   font-size: 14px;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+
 @media (max-width: 991px) {
   .hero {
     background-position: center center;
@@ -251,6 +258,3 @@ footer {
     border-radius: 8px;
   }
 }
-
-
-

@@ -29,7 +29,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <div className="pt-sec text-center px-4 px-lg-5">
+    <div id="testimonials" className="pt-sec text-center px-4 px-lg-5">
       <div className="sec-chip light-text">Testimonials</div>
       <div className="sec-title light-text">
         Because Every Story Deserves to Be Heard

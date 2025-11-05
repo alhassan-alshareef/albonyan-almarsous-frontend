@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
 const Hero = () => {
   return (
-    <div className="hero">
+    <div id="about" className="hero">
       <div className="hero-inner px-4 px-lg-5">
         <div className="row mt-5">
           <div className="col-lg-6 col-12 order-lg-1 order-2">
@@ -13,12 +14,12 @@ const Hero = () => {
               community.
             </p>
             <div className="actoin-row my-4 justify-content-center justify-content-lg-start">
-              <a className="p-button" href="#">
+              <Link className="p-button" to="/login">
                 Login
-              </a>
-              <a className="s-button" href="#">
+              </Link>
+              <Link className="s-button" to="/signup">
                 Sign Up
-              </a>
+              </Link>
             </div>
           </div>
           <div className="col-lg-6 col-12 order-lg-2 order-1 d-none d-md-block">

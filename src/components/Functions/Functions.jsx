@@ -32,7 +32,7 @@ const Functions = () => {
   ];
   return (
     <>
-      <div className="sec-dev px-4 px-lg-5 mt-5">
+      <div id="features" className="sec-dev px-4 px-lg-5 mt-5">
         <div className="sec-chip text-center">Our Services</div>
         <div className="sec-title text-center">
           Designed to Make Connection Simple
