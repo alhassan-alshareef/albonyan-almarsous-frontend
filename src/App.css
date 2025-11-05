@@ -4,12 +4,12 @@
 
 .post-card {
   width: 100%;
-  max-width: 480px;             /* 🔹 قللنا عرض الكرت */
-  margin: 10px auto;            /* 🔹 قللنا الفراغ حول الكرت */
-  padding: 8px 10px;            /* 🔹 قللنا الحشوة الداخلية */
+  max-width: 480px;             
+  margin: 10px auto;           
+  padding: 8px 10px;           
   background-color: #F6F6F6;
   border: 1px solid #c9c9c9;
-  border-radius: 12px;          /* 🔹 ناعم شوي */
+  border-radius: 12px;         
   font-family: "Roboto", sans-serif;
   overflow: hidden;
 }

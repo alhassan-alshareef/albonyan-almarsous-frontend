@@ -35,20 +35,13 @@ function App() {
         <Route path="/" element={<LandingPage />} />
 
         {/* Profile */}
-        <Route
-          path="/profile"
-          element={
-            <ProtectedRoute>
-              <ProfilePage />
-            </ProtectedRoute>
-          }
-        />
+        <Route path="/profile" element={<ProtectedRoute><ProfilePage /></ProtectedRoute>}/>
 
         {/* Patient */}
         <Route path="/patient/posts" element={<ProtectedRoute allowedRole="patient"><MyPosts /></ProtectedRoute>} />
         <Route path="/patient/add-post" element={<ProtectedRoute allowedRole="patient"><AddPost /></ProtectedRoute>} />
         <Route path="/patient/edit-post/:id" element={<ProtectedRoute allowedRole="patient"><EditPost /></ProtectedRoute>} />
-        <Route path="/patient/post/:id/comments" element={<PostComments />} />
+        <Route path="/patient/post/:id/comments" element={<ProtectedRoute allowedRole="patient"><PostComments /></ProtectedRoute>} />
         <Route path="/patient/donations" element={<ProtectedRoute allowedRole="patient"><MyDonations /></ProtectedRoute>} />
         <Route path="/patient/add-donation" element={<ProtectedRoute allowedRole="patient"><AddDonation /></ProtectedRoute>} />
         <Route path="/patient/edit-donation/:id" element={<ProtectedRoute allowedRole="patient"><EditDonation /></ProtectedRoute>} />
