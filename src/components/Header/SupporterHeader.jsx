@@ -26,7 +26,7 @@ const SupporterHeader = ({ showSearch = true, showHi = true, onSearch }) => {
 
   const handleLogout = () => {
     clearTokens();
-    navigate("/login");
+    navigate("/");
   };
 
   return (

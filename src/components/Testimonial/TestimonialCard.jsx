@@ -2,7 +2,7 @@ const TestimonialCard = ({ Name, Image, City, Title, Content }) => {
   return (
     <div className="col">
       <div className="testimonial-card h-100">
-        <img className="quote-sym" width={25} src="./Images/quote.svg" alt="" />
+        <img className="quote-sym" width={25} src="/images/quote.svg" alt="quote.svg" />
         <div className="card-content">
           <div className="card-title mt-2">{Title}</div>
           <div className="card-inner mt-2">{Content}</div>

@@ -3,7 +3,7 @@ const Nav = () => {
     <nav className="navbar navbar-expand-lg px-4 px-lg-5 nav-shadow">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
-          <img src="/Images/logo.svg" />
+          <img src="/images/logo.svg" alt="Albonyan AlMarsous logo" />
         </a>
         <button
           className="navbar-toggler"
@@ -40,10 +40,10 @@ const Nav = () => {
             </li>
           </ul>
           <div className="d-flex ">
-            <a className="btn btn-success mx-3" href="#" role="button">
+            <a className="btn btn_success mx-3" href="#" role="button">
               Login
             </a>
-            <a className="btn btn-outline-success" href="#" role="button">
+            <a className="btn btn_outline_success" href="#" role="button">
               Sign Up
             </a>
           </div>

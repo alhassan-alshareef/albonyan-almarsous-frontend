@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+body {
+  min-height: 100vh; /* ensure full viewport height */
+  display: flex;
+  flex-direction: column;
+  line-height: 1.6;
+  background-color: #ffffff; /* page background */
+  overflow-x: hidden; /* avoid horizontal scrollbars */
+}

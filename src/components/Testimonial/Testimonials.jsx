@@ -1,9 +1,10 @@
 import TestimonialCard from "./TestimonialCard";
+
 const Testimonials = () => {
   const Testimonial = [
     {
       Name: "Fatimah A",
-      Image: "/Images/model-1.jpg",
+      Image: "/images/model-1.jpg",
       City: "Jeddah",
       Title: "A Mother’s Story",
       Content:
@@ -26,6 +27,7 @@ const Testimonials = () => {
         "Our family used this space to share updates, photos, and messages. It helped us stay connected through every challenge, and it brought comfort to see how many people cared.",
     },
   ];
+
   return (
     <div className="pt-sec text-center px-4 px-lg-5">
       <div className="sec-chip light-text">Testimonials</div>
@@ -33,17 +35,16 @@ const Testimonials = () => {
         Because Every Story Deserves to Be Heard
       </div>
       <div className="row row-cols-1 row-cols-md-3 g-5 mt-3 mb-5">
-        {Testimonial.map((User) => {
-          return (
-            <TestimonialCard
-              Name={User.Name}
-              Image={User.Image}
-              City={User.City}
-              Title={User.Title}
-              Content={User.Content}
-            />
-          );
-        })}
+        {Testimonial.map((User, index) => (
+          <TestimonialCard
+            key={index}
+            Name={User.Name}
+            Image={User.Image}
+            City={User.City}
+            Title={User.Title}
+            Content={User.Content}
+          />
+        ))}
       </div>
     </div>
   );

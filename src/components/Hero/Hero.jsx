@@ -23,7 +23,7 @@ const Hero = () => {
           </div>
           <div className="col-lg-6 col-12 order-lg-2 order-1 d-none d-md-block">
             <div className="hero-img d-flex align-items-lg-center justify-content-lg-end justify-content-center">
-              <img className="w-100" src="./images/HeroModel.png" />
+              <img className="w-100" src="/images/HeroModel.png" alt="Hero model"/>
             </div>
           </div>
         </div>

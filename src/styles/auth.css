@@ -4,7 +4,7 @@
 }
 
 .auth-image {
-  background: url("/src/images/login-signup.png") no-repeat center center;
+  background: url("/images/login-signup.png") no-repeat center center;
   background-size: cover;
 }
 

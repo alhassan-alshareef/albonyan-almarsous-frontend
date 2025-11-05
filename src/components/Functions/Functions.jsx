@@ -5,28 +5,28 @@ const Functions = () => {
       Title: "Emotional Support",
       Caption:
         "Stay surrounded by love and encouragement from family, friends, and your community.",
-      Image: "Images/support-img.jpg",
+      Image: "/images/support-img.jpg",
       Id: 1,
     },
     {
       Title: "Meaningful Donations",
       Caption:
         "Give or receive help with transparency, every contribution makes a difference.",
-      Image: "Images/Donatinos.jpg",
+      Image: "/images/Donatinos.jpg",
       Id: 2,
     },
     {
       Title: "Healing Through Connection",
       Caption:
         "A simple message from someone who cares can ease the pain and warm the heart.",
-      Image: "Images/Healing.jpg",
+      Image: "/images/Healing.jpg",
       Id: 3,
     },
     {
       Title: "Social Activities",
       Caption:
         "Join uplifting events and group activities that help you stay connected and positive.",
-      Image: "Images/Activities.jpg",
+      Image: "/images/Activities.jpg",
       Id: 4,
     },
   ];
@@ -42,6 +42,7 @@ const Functions = () => {
             {functionsList.map((x) => {
               return (
                 <FunctionsItem
+                  key={x.Id}
                   Title={x.Title}
                   Caption={x.Caption}
                   Image={x.Image}

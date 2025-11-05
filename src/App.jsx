@@ -6,6 +6,7 @@ import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
 import ProfilePage from "./pages/ProfilePage";
 import ProtectedRoute from "./pages/ProtectedRoute";
+import LandingPage from "./pages/LandingPage";
 
 //  Patient
 import MyPosts from "./pages/patient/MyPosts";
@@ -30,6 +31,7 @@ function App() {
         {/* Public */}
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/" element={<LandingPage />} />
 
         {/* Profile */}
         <Route
