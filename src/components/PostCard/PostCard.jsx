@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "../../App.css";
 
 function PostCard({ post, onDelete }) {
-  const { patient, content, created_at } = post;
+  const { patient, content, image, created_at } = post;
   const postId = post.id;
   const { username, illness } = patient;
   const navigate = useNavigate();
@@ -31,6 +31,15 @@ function PostCard({ post, onDelete }) {
       </div>
 
       <div className="post-card__content">{content}</div>
+      {image && (
+        <div className="post-card__image-box">
+          <img
+            src={image} 
+            alt="Post"
+            className="post-card__image"
+          />
+        </div>
+      )}
 
       <div className="post-card__actions post-card__actions--three">
         <button
@@ -46,7 +55,10 @@ function PostCard({ post, onDelete }) {
           onClick={() => navigate(`/patient/post/${postId}/comments`)}
           className="post-card__action post-card__action--view"
         >
-          <span className="material-symbols-outlined me-2">chat_bubble_outline</span> Comments
+          <span className="material-symbols-outlined me-2">
+            chat_bubble_outline
+          </span>{" "}
+          Comments
         </button>
 
         <span className="post-card__divider" />

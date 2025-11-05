@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PatientHeader from "../../components/Header/PatientHeader";
 import { createPost } from "../../lib/api";
+import ImageUploader from "../../components/shared/ImageUploader"; 
 import "../../App.css";
 
 export default function AddPost() {
   const [content, setContent] = useState("");
+  const [image, setImage] = useState(null);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
@@ -13,17 +15,24 @@ export default function AddPost() {
   const handleAddPost = async (e) => {
     e.preventDefault();
 
-    if (!content.trim()) {
-      setMessage("Content cannot be empty.");
+    if (!content.trim() && !image) {
+      setMessage("You must write something or upload an image.");
       return;
     }
 
     try {
       setLoading(true);
       setMessage("");
-      await createPost({ content });
-      setMessage("Post saved.");
+
+      const formData = new FormData();
+      formData.append("content", content);
+      if (image) formData.append("image", image);
+
+      await createPost(formData);
+
+      setMessage("Post saved successfully.");
       setContent("");
+      setImage(null);
 
       setTimeout(() => navigate("/patient/posts"), 800);
     } catch (err) {
@@ -50,12 +59,18 @@ export default function AddPost() {
           onChange={(e) => setContent(e.target.value)}
         />
 
-        <button type="submit" className="add-form-btn" disabled={loading}>
+        <ImageUploader onImageSelect={setImage} />
+
+        <button type="submit" className="add-form-btn mt-3" disabled={loading}>
           {loading ? "Posting..." : "Post"}
         </button>
 
         {message && (
-          <p className={`mt-2 text-center ${message.includes("saved") ? "text-success" : "text-danger"}`}>
+          <p
+            className={`mt-2 text-center ${
+              message.includes("success") ? "text-success" : "text-danger"
+            }`}
+          >
             {message}
           </p>
         )}
@@ -63,4 +78,3 @@ export default function AddPost() {
     </div>
   );
 }
-

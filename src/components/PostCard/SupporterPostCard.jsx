@@ -7,7 +7,7 @@ export default function SupporterPostCard({ post, disableActions = false }) {
   if (!post?.patient) return null;
 
   const navigate = useNavigate();
-  const { patient, content, created_at, likes_count, comments_count, is_liked_by_user } = post;
+  const { patient, content, created_at, likes_count, comments_count, is_liked_by_user, image } = post;
   const { username = "Unknown", illness = "Not specified" } = patient;
 
   const [likesCount, setLikesCount] = useState(likes_count || 0);
@@ -47,6 +47,16 @@ export default function SupporterPostCard({ post, disableActions = false }) {
       </div>
 
       <div className="post-card__content">{content}</div>
+
+      {image && (
+        <div className="post-card__image-box">
+          <img
+            src={image} 
+            alt="Post"
+            className="post-card__image"
+          />
+        </div>
+      )}
 
       <div className="post-card__actions">
         <button

@@ -1,7 +1,7 @@
 .add-card {
   width: 100%;
   max-width: 629px;
-  height: 227px;
+  height: 180px;
   border: 1px solid #C9C9C9;
   border-radius: 8px;
   background-color: #ffffff; 
@@ -11,6 +11,7 @@
   justify-content: center;
   cursor: pointer;
   transition: background 0.2s ease;
+  margin-bottom: 24px;
 }
 
 .add-card:hover {

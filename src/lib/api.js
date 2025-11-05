@@ -21,7 +21,7 @@ export const getPost = (id) =>
 
 //  Create a new post
 export const createPost = (data) =>
-  axios.post(`${BASE_URL}/patient/posts/`, data, { headers: authHeader() });
+  axios.post(`${BASE_URL}/patient/posts/`, data, { headers:{ ...authHeader(),"Content-Type": "multipart/form-data",}, });
 
 //  Update existing post
 export const updatePost = (id, data) =>

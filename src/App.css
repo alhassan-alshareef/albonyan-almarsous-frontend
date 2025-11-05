@@ -4,11 +4,12 @@
 
 .post-card {
   width: 100%;
-  max-width: 629px;
-  margin: 16px auto;
+  max-width: 480px;             /* 🔹 قللنا عرض الكرت */
+  margin: 10px auto;            /* 🔹 قللنا الفراغ حول الكرت */
+  padding: 8px 10px;            /* 🔹 قللنا الحشوة الداخلية */
   background-color: #F6F6F6;
   border: 1px solid #c9c9c9;
-  border-radius: 15px;
+  border-radius: 12px;          /* 🔹 ناعم شوي */
   font-family: "Roboto", sans-serif;
   overflow: hidden;
 }
@@ -16,8 +17,8 @@
 
 .post-card__header {
   display: flex;
-  gap: 12px;
-  padding: 16px 18px 0;
+  gap: 10px;
+  padding: 10px 14px 0;
 }
 
 .donation-card__avatar {
@@ -50,11 +51,11 @@
 
 
 .post-card__content {
-  padding: 8px 18px 14px;
+  padding: 6px 14px 10px;
   font-size: 14px;
   color: #2e2e2e;
   line-height: 1.5;
-  margin: 6px 0 0 48px; 
+  margin: 4px 0 0 48px; 
   white-space: pre-wrap;
 }
 
@@ -76,9 +77,9 @@
 .post-card__action {
   border: none;
   background: transparent;
-  font-size: 14px;
+  font-size: 13.5px;
   color: #2e2e2e;
-  padding: 10px 0;
+  padding: 8px 0;
   width: 100%;
   cursor: pointer;
   transition: background 0.2s;
@@ -142,6 +143,25 @@
 .post-card__action--view:hover {
   background: #d6f5e3;
 }
+
+.post-card__image-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 18px 12px 18px;
+  padding: 4px;
+  
+  border-radius: 8px;
+}
+
+.post-card__image {
+  width: 80%;                
+  max-width: 500px;          
+  height: auto;
+  object-fit: contain;      
+  border-radius: 8px;
+}
+
 
 
 /* font delet and edit style */
