@@ -71,9 +71,6 @@ export default function ProfilePage() {
 
       <div className="text-center mt-5">
         <h5><strong>My Profile</strong></h5>
-        <p className="text-muted">
-          {profile.role === "patient" ? "Patient Account" : "Supporter Account"}
-        </p>
       </div>
 
       <form onSubmit={handleSave} className="add-form-box mx-auto mt-4">
