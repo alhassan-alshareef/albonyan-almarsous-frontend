@@ -108,7 +108,14 @@ docker compose up --build
 - How to test and debug APIs using **Postman**
 
 ---
+## 🧊 Future Ideas
 
+- Add a Patient Appointments Page to show available visiting times.
+- Add a Donation Shop Page where patients (or their families) can sell items they no longer need.
+- Add Multi-language support (English + Arabic).
+- Add an Admin Dashboard 
+
+---
 ## 👨‍💻 Author
 
 **Alhasan Ali Alsharif**  
