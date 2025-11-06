@@ -77,6 +77,25 @@ This project was built using **React (Vite)** for the frontend and **Django REST
 
 ### 1️⃣ Clone both repositories inside the same parent folder
 ```bash
-git clone https://github.com/alhassan-alshareef/albonyan-almarsous-frontend.git
-git clone https://github.com/alhassan-alshareef/albonyan-almarsous-backend.git
+parent-folder/
+├── Albonyan-AlMarsous-backend/
+└── Albonyan-AlMarsous-frontend/
+```
+
+### 2️⃣ Clone the backend repository
+```bash
+git clone https://github.com/YourUsername/Albonyan-AlMarsous-backend.git
+
+```
+
+### 3️⃣ Clone the frontend repository
+```bash
+git clone https://github.com/YourUsername/Albonyan-AlMarsous-frontend.git
+
+```
+### 4️⃣ Run Docker Compose from the backend folder
+```bash
+cd Albonyan-AlMarsous-backend
+docker compose up --build
+```
 
