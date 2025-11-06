@@ -1,4 +1,4 @@
-# 🧱 Albonyan AlMarsous – Frontend
+# Albonyan AlMarsous – Frontend
 
 ## 🌍 About the Project
 
