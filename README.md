@@ -73,5 +73,10 @@ This project was built using **React (Vite)** for the frontend and **Django REST
 - **Backend Repository:** [Albonyan AlMarsous Backend](https://github.com/alhassan-alshareef/albonyan-almarsous-backend)
 
 ---
+## Installation Instructions (Docker)
 
+### 1️⃣ Clone both repositories inside the same parent folder
+```bash
+git clone https://github.com/alhassan-alshareef/albonyan-almarsous-frontend.git
+git clone https://github.com/alhassan-alshareef/albonyan-almarsous-backend.git
 
