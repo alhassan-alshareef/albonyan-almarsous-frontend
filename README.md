@@ -14,11 +14,11 @@ This project was built using **React (Vite)** for the frontend and **Django REST
 
 ### 🖥️ Frontend
 - React (Vite)
-- JavaScript (ES6+)
+- JavaScript 
 - React Router DOM
-- Axios (API handling)
+- Axios 
 - Bootstrap
-- Custom CSS (green & light gray theme)
+- Custom CSS 
 
 ### ⚙️ Backend
 - Django REST Framework
