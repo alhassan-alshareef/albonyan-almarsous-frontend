@@ -118,8 +118,8 @@ docker compose up --build
 ---
 ## 👨‍💻 Author
 
-**Alhasan Ali Alsharif**  
+**Alhassan Ali Alshareef**  
 Saudi Digital Academy – Software Engineering Bootcamp  
-King Abdulaziz University Graduate  
+
 
 🌐 [GitHub Profile](https://github.com/alhassan-alshareef)
