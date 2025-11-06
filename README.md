@@ -99,3 +99,20 @@ cd Albonyan-AlMarsous-backend
 docker compose up --build
 ```
 
+## 📘 What I Learned
+
+- How to connect **React** with **Django REST APIs**  
+- How **JWT authentication** works for securing user access  
+- How to use **Docker** to run full-stack web applications  
+- How to design **clean, reusable React components**  
+- How to test and debug APIs using **Postman**
+
+---
+
+## 👨‍💻 Author
+
+**Alhasan Ali Alsharif**  
+Saudi Digital Academy – Software Engineering Bootcamp  
+King Abdulaziz University Graduate  
+
+🌐 [GitHub Profile](https://github.com/alhassan-alshareef)
