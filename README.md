@@ -115,11 +115,4 @@ docker compose up --build
 - Add Multi-language support (English + Arabic).
 - Add an Admin Dashboard 
 
----
-## 👨‍💻 Author
 
-**Alhassan Ali Alshareef**  
-Saudi Digital Academy – Software Engineering Bootcamp  
-
-
-🌐 [GitHub Profile](https://github.com/alhassan-alshareef)
